@@ -1,5 +1,5 @@
 /*
- * Script for list settings page.
+ * Script for dictionary settings page.
  */
 (function() {
 	// Select color
@@ -68,12 +68,12 @@
 			icon: icon,
 			color_class: $('#colors :radio:checked').parent().parent().attr('class')
 		};
-		if ($.cl.list_id) {
-			data.id = $.cl.list_id;
+		if ($.cl.dictionary_id) {
+			data.id = $.cl.dictionary_id;
 		}
 
-		$.post('?module=json&action=listsave', data, function(r) {
-			window.location.search = '?action=list&id='+r.data;
+		$.post('?module=json&action=dictionarysave', data, function(r) {
+			window.location.search = '?action=dictionary&id='+r.data;
 		}, 'json');
 		return false;
 	};
@@ -87,16 +87,16 @@
 		}
 
 		if (e.which && e.which == 27) { // escape
-			if ($.cl.list_id) {
-				window.location.search = '?action=list&id='+$.cl.list_id;
+			if ($.cl.dictionary_id) {
+				window.location.search = '?action=dictionary&id='+$.cl.dictionary_id;
 			}
 			return false;
 		}
 	});
 
-	// highlight `new list` in sidebar
-	if (!$.cl.list_id) {
-		$('#sidebar-new-list li').addClass('selected');
+	// highlight `new dictionary` in sidebar
+	if (!$.cl.dictionary_id) {
+		$('#sidebar-new-dictionary li').addClass('selected');
 	}
 
 	$('#name').focus();

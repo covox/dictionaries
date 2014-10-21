@@ -5,9 +5,9 @@
 	<div class="fields form">
 	  <div class="field-group">
 		<div class="field">
-			<div class="name bold">[`List name`]</div>
+			<div class="name bold">[`Dictionary name`]</div>
 			<div class="value bold">
-				<input id="name" class="large" value="{$list.name|escape}" type="text">
+				<input id="name" class="large" value="{$dictionary.name|escape}" type="text">
 				<br>
 				<br>
 			</div>
@@ -17,7 +17,7 @@
 			<div class="value c-settings">
 				<ul class="menu-h" id="colors">
 					{foreach $colors as $c}
-						<li class="{$c}"><a href="#"><input name="c-list-settings-color" type="radio" value="{$c}"{if $c == $list.color_class} checked="true"{/if}></a></li>
+						<li class="{$c}"><a href="#"><input name="c-list-settings-color" type="radio" value="{$c}"{if $c == $dictionary.color_class} checked="true"{/if}></a></li>
 					{/foreach}
 				</ul>
 			</div>
@@ -28,11 +28,11 @@
 			<div class="value c-list-icons">
 				<ul class="menu-h" id="icons">
 					{foreach $icons as $i}
-						<li{if $list.icon == $i} class="selected"{/if}><a href="#"><i class="icon16 {$i}"></i></a></li>
+						<li{if $dictionary.icon == $i} class="selected"{/if}><a href="#"><i class="icon16 {$i}"></i></a></li>
 					{/foreach}
 				</ul>
 				<span class="small">[`Or specify image URL (must be exactly 16x16 pixels):`]<br>
-					<input value="{if substr($list.icon, 0, 7) == 'http://'}{$list.icon}{else}http://{/if}" type="text" id="icon">
+					<input value="{if substr($dictionary.icon, 0, 7) == 'http://'}{$dictionary.icon}{else}http://{/if}" type="text" id="icon">
 				</span>
 			</div>
 		</div>
@@ -41,8 +41,8 @@
 		<div class="field">
 			<div class="value submit">
 				<input class="button green" id="submit" value="[`Save`]" type="button">
-				{if $list.id}
-					[`or`] <a href="?action=list&id={$list.id}">[`go back to list`]</a>
+				{if $dictionary.id}
+					[`or`] <a href="?action=dictionary&id={$dictionary.id}">[`go back to dictionary`]</a>
 				{/if}
 			</div>
 		</div>
@@ -57,10 +57,10 @@
 <script type="text/javascript">
 	// data for script have to be generated inside template
 	$.cl = {
-		list_id: {if $list.id}{$list.id}{else}null{/if},
+        dictionary_id: {if $dictionary.id}{$dictionary.id}{else}null{/if},
 		loc: {
 			'max': "[`Max 255 characters`]",
-			'empty_name': "[`List name cannot be empty`]"
+			'empty_name': "[`Dictionary name cannot be empty`]"
 		}
 	};
 </script>

@@ -14,77 +14,73 @@ class dictionariesBackendActions extends waViewActions
     /** Default action when no other action is specified. */
     public function defaultAction()
     {
-        $lm = new dictionariesModel();
-        $lists = $lm->getAllowed();
-        if (!$lists) {
-            if ($this->getRights('add_list')) {
+        $dm = new dictionariesModel();
+        $dictionaries = $dm->getAllowed();
+        if (!$dictionaries) {
+            if ($this->getRights('add_dictionary')) {
                 $this->execute('editor');
                 return;
             }
-
-            // No available lists and cannot create new one: show default template
             return;
         }
 
-        // is there a cookie with last list user opened?
-        $id = waRequest::cookie('last_list_id', 0, 'int');
-        if ($id && isset($lists[$id])) {
-            $this->execute('list', $lists[$id]);
+        $id = waRequest::cookie('last_dictionary_id', 0, 'int');
+        if ($id && isset($dictionaries[$id])) {
+            $this->execute('dictionary', $dictionaries[$id]);
             return;
         }
 
-        // simply show the first list
-        $lists = array_values($lists);
-        $this->execute('list', $lists[0]);
+        $dictionaries = array_values($dictionaries);
+        $this->execute('dictionary', $dictionaries[0]);
     }
 
-    /** Show items in TODO list */
-    public function ListAction($list = null)
+    public function DictionaryAction($dictionary = null)
     {
-        if (!$list) {
+        if (!$dictionary) {
             if (! ( $id = waRequest::request('id', 0, 'int'))) {
                 throw new waException('No id specified.');
             }
-            $lm = new dictionariesModel();
-            if (! ( $list = $lm->getById($id))) {
-                throw new waException('List does not exist.');
+            $dm = new dictionariesModel();
+            if (! ( $dictionary = $dm->getById($id))) {
+                throw new waException('Dictionary does not exist.');
             }
         }
 
-        $access = $this->getRights('list.'.$list['id']);
+        $access = $this->getRights('dictionary.'.$dictionary['id']);
         if (!$access) {
             throw new waRightsException('Access denied.');
         }
         $this->view->assign('can_edit', $access > 1);
-        $this->view->assign('list', $list);
+        $this->view->assign('dictionary', $dictionary);
+//        $this->view->assign('dictionary_id', $id);
 
-        $lim = new dictionariesItemsModel();
-        $items = dictionariesItem::prepareItems($lim->getByList($list['id']));
+        $dim = new dictionariesItemsModel();
+        $items = dictionariesItem::prepareItems($dim->getByDictionaryId($dictionary['id']));
 
         $this->view->assign('items', array_values($items));
 
-        wa()->getResponse()->setCookie('last_list_id', $list['id']);
-        $this->layout->setTitle($list['name']);
+        wa()->getResponse()->setCookie('last_dictionary_id', $dictionary['id']);
+        $this->layout->setTitle($dictionary['name']);
     }
 
-    /** Create new or edit existing list. */
+    /** Create new or edit existing dictionary. */
     public function EditorAction()
     {
         $id = waRequest::request('id', 0, 'int');
         if ($id) {
-            if($this->getRights('list.'.$id) <= 1) {
+            if($this->getRights('dictionary.'.$id) <= 1) {
                 throw new waRightsException('Access denied.');
             }
             $lm = new dictionariesModel();
-            if (! ( $list = $lm->getById($id))) {
-                throw new waException('List does not exist.');
+            if (! ( $dictionary = $lm->getById($id))) {
+                throw new waException('Dictionary does not exist.');
             }
-            $this->layout->setTitle($list['name']);
+            $this->layout->setTitle($dictionary['name']);
         } else {
-            if(!$this->getRights('add_list')) {
+            if(!$this->getRights('add_dictionary')) {
                 throw new waRightsException('Access denied.');
             }
-            $list = array(
+            $dictionary = array(
                 'id' => '',
                 'name' => '',
                 'color_class' => 'c-white',
@@ -92,7 +88,7 @@ class dictionariesBackendActions extends waViewActions
                 'count' => 0,
             );
         }
-        $this->view->assign('list', $list);
+        $this->view->assign('dictionary', $dictionary);
 
         $this->view->assign('icons', array(
             'notebook',

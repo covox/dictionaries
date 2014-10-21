@@ -1,20 +1,20 @@
 {*
  * List items page.
  *}
-<div class="block double-padded c-list {$list.color_class}{if $can_edit} cl-editable{/if}">
+<div class="block double-padded c-list {$dictionary.color_class}{if $can_edit} cl-editable{/if}">
 	{if $can_edit}
 		<ul class="menu-h float-right">
 			<li>
-				<a href="?action=editor&id={$list.id}"><i class="icon16 settings"></i>[`List settings`]</a>
+				<a href="?action=editor&id={$dictionary.id}"><i class="icon16 settings"></i>[`Dictionary settings`]</a>
 			</li>
 			<li>
-				<a href="#" id="deletelist"><i class="icon16 delete"></i>[`Delete`]</a>
+				<a href="#" id="deletedictionary"><i class="icon16 delete"></i>[`Delete`]</a>
 			</li>
 		</ul>
 	{/if}
 
 	<h1 id="name">
-		<span>{$list.name|escape}</span>
+		<span>{$dictionary.name|escape}</span>
 		{if $can_edit}
 			<a class="inline-link" id="add" href="#"><i class="icon16 add"></i></a>
 		{/if}
@@ -23,7 +23,8 @@
 	<ul class="menu-v">
 		{if $can_edit}
 			<li class="c-add-form" id="c-add-form">
-				<input type="text">
+				<input type="text" name="name">
+                <input type="hidden" name="dictionary_id" value="{$dictionary_id}">
 				<input type="submit" value="[`Add`]">
 			</li>
 		{/if}
@@ -32,7 +33,7 @@
 		</li>
 	</ul>
 
-	<ul class="menu-v" id="c-checklist">
+	<ul class="menu-v" id="c-dictionary">
 	</ul>
 
 	<div class="clear-left"></div>
@@ -40,17 +41,17 @@
 <script type="text/javascript">
 	// data for script have to be generated inside template
 	$.cl = {
-		list_id: {$list.id},
+        dictionary_id: {$dictionary.id},
 		items: {json_encode($items)},
 		can_edit: {if $can_edit}1{else}0{/if},
 		loc: {
 			'edit': "[`Edit`]",
 			'del': "[`Delete`]",
 			'max': "[`Max 255 characters`]",
-			'prompt': "[`Edit list item`]",
-			'delconfirm': "[`List “%s” will be deleted permanently. Delete?`]"
+			'prompt': "[`Edit dictionary item`]",
+			'delconfirm': "[`Dictionary “%s” will be deleted permanently. Delete?`]"
 		}
 	};
 </script>
-<script type="text/javascript" src="{$wa_app_static_url}js/list.js?{$wa->version()}"></script>
+<script type="text/javascript" src="{$wa_app_static_url}js/dictionary.js?{$wa->version()}"></script>
 

@@ -3,19 +3,18 @@
 /**
  * Interface to Contacts application to set up user access rights.
  */
-class checklistsRightConfig extends waRightConfig
+class checkdictionariesRightConfig extends waRightConfig
 {
     public function init()
     {
-        $this->addItem('add_list', _w('Can create new lists'), 'checkbox');
+        $this->addItem('add_dictionary', _w('Can create new dictionaries'), 'checkbox');
 
-        // existing lists
-        $lm = new checklistsListModel();
-        $lists = array();
-        foreach($lm->getAll() as $list) {
-            $lists[$list['id']] = $list['name'];
+        $dm = new dictionariesModel();
+        $dictionaries = array();
+        foreach($dm->getAll() as $dictionary) {
+            $dictionaries[$dictionary['id']] = $dictionary['name'];
         }
-        $this->addItem('list', _w('Available lists'), 'selectlist', array('items' => $lists, 'options' => array(
+        $this->addItem('dictionary', _w('Available dictionaries'), 'selectdictionary', array('items' => $dictionaries, 'options' => array(
             0 => _w('No access'),
             1 => _w('Check items only'),
             2 => _w('Full access'),

@@ -14,7 +14,7 @@ return array(
     ),
     'dictionaries_items' => array(
         'id' => array('int', 11, 'unsigned' => 1, 'null' => 0, 'autoincrement' => 1),
-	'dictionary_id' => array('int', 11, 'unsigned' => 1, 'null' => 0),
+        'dictionary_id' => array('int', 11, 'unsigned' => 1, 'null' => 0),
         'name' => array('varchar', 100, 'null' => 0),
         'value' => array('varchar', 255, 'null' => 0),
         'desc' => array('varchar', 1024, 'null' => 0),

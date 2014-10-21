@@ -1,9 +1,9 @@
 <?php
 
 return array(
-	'list_create' => array(),
-	'list_startover' => array(),
-	'list_delete' => array(),
+	'dictionary_create' => array(),
+	'dictionary_startover' => array(),
+	'dictionary_delete' => array(),
 	'item_create' => array(),
 	'item_edit' => array(),
 	'item_check' => array(),

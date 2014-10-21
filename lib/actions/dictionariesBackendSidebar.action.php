@@ -7,23 +7,22 @@ class dictionariesBackendSidebarAction extends waViewAction
 {
     public function execute()
     {
-        $lm = new dictionariesModel();
-        $lists = $lm->getAllowed();
-        foreach($lists as $id => &$list) {
-            if (strtolower(substr($list['icon'], 0, 7)) == 'http://') {
-                $list['icon'] = '<i class="icon16" style="background-image:url('.htmlspecialchars($list['icon']).')"></i>';
+        $dm = new dictionariesModel();
+        $dictionaries = $dm->getAllowed();
+        foreach($dictionaries as $id => &$dictionary) {
+            if (strtolower(substr($dictionary['icon'], 0, 7)) == 'http://') {
+                $dictionary['icon'] = '<i class="icon16" style="background-image:url('.htmlspecialchars($dictionary['icon']).')"></i>';
             } else {
-                $list['icon'] = '<i class="icon16 '.$list['icon'].'"></i>';
+                $dictionary['icon'] = '<i class="icon16 '.$dictionary['icon'].'"></i>';
             }
         }
 
-        $id = waRequest::request('id');
-        if ( ( $id = waRequest::request('id')) && isset($lists[$id])) {
-            $lists[$id]['current'] = true;
+        if ( ( $id = waRequest::request('id')) && isset($dictionaries[$id])) {
+            $dictionaries[$id]['current'] = true;
         }
 
-        $this->view->assign('lists', $lists);
-        $this->view->assign('can_add_lists', $this->getRights('add_list'));
+        $this->view->assign('dictionaries', $dictionaries);
+        $this->view->assign('can_add_dictionaries', $this->getRights('add_dictionary'));
     }
 }
 

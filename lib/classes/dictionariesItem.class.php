@@ -14,9 +14,9 @@ class dictionariesItem
     public static function prepareItem($item)
     {
         $item['name'] = htmlspecialchars($item['name']);
-        $item['when'] = $item['done'] ? waDateTime::format('humandatetime', $item['done']) : '';
+        $item['when'] = waDateTime::format('humandatetime');
         $item['who'] = '';
-        if ($item['contact_id'] && wa()->getUser()->getId() != $item['contact_id']) {
+        if (isset($item['contact_id']) && wa()->getUser()->getId() != $item['contact_id']) {
             $c = new waContact($item['contact_id']);
             try {
                 $item['who'] = htmlspecialchars($c->getName());
