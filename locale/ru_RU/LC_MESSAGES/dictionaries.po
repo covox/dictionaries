@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WebAsyst Dictionaries\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-10-21 20:35+0300\n"
+"PO-Revision-Date: 2014-10-22 03:00+0300\n"
 "Last-Translator: snark.pro <covoxx@gmail.com>\n"
 "Language-Team:  <covoxx@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -17,17 +17,8 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPath-1: .\n"
 
-msgid "New list"
-msgstr "Новый список"
-
-msgid "Checklists"
-msgstr "Списки дел"
-
 msgid "Delete"
 msgstr "Удалить"
-
-msgid "List name"
-msgstr "Название"
 
 msgid "Color"
 msgstr "Цвет"
@@ -45,12 +36,6 @@ msgstr "Сохранить"
 msgid "or"
 msgstr "или"
 
-msgid "go back to list"
-msgstr "вернуться к списку"
-
-msgid "List settings"
-msgstr "Настройки списка"
-
 msgid "Add"
 msgstr "Добавить"
 
@@ -60,23 +45,8 @@ msgstr "Редактировать"
 msgid "Done"
 msgstr "Готово"
 
-msgid "List name cannot be empty"
-msgstr "Название списка не может быть пустым"
-
-msgid "Edit list item"
-msgstr "Редактировать название пункта"
-
-msgid "List “%s” will be deleted permanently. Delete?"
-msgstr "Список «%s» будет удален вместе со всеми элементами. Удалить?"
-
 msgid "Max 255 characters"
 msgstr "Ограничение 255 символов"
-
-msgid "Can create new lists"
-msgstr "Может создавать списки"
-
-msgid "No lists available"
-msgstr "Нет доступных списков"
 
 msgid "Start over"
 msgstr "Начать заново"
@@ -90,9 +60,46 @@ msgstr "Только отмечать пункты списка"
 msgid "Full access"
 msgstr "Полный доступ"
 
-msgid "Available lists"
-msgstr "Доступные списки"
-
 #: /wa-apps/dictionaries/lib/layouts/dictionariesDefault.layout.php:13
 msgid "Dictionaries"
 msgstr "Словари"
+
+#: /wa-apps/dictionaries/templates/actions/backend/BackendEditor.html:8
+msgid "Dictionary name"
+msgstr "Название словаря"
+
+#: /wa-apps/dictionaries/templates/actions/backend/BackendEditor.html:45
+msgid "go back to dictionary"
+msgstr "вернуться к словарю"
+
+#: /wa-apps/dictionaries/templates/actions/backend/BackendEditor.html:63
+msgid "Dictionary name cannot be empty"
+msgstr "Имя словаря не может быть пусто"
+
+#: /wa-apps/dictionaries/templates/actions/backend/BackendDictionary.html:8
+msgid "Dictionary settings"
+msgstr "Настройки словаря"
+
+#: /wa-apps/dictionaries/templates/actions/backend/BackendDictionary.html:51
+msgid "Edit dictionary item"
+msgstr "Редактировать запись словаря"
+
+#: /wa-apps/dictionaries/templates/actions/backend/BackendDictionary.html:52
+msgid "Dictionary “%s” will be deleted permanently. Delete?"
+msgstr "Словарь «%s» будет удален вместе со всеми элементами. Удалить?"
+
+#: /wa-apps/dictionaries/templates/actions/backend/BackendSidebar.html:15
+msgid "No dictionaries available"
+msgstr "Нет доступных словарей"
+
+#: /wa-apps/dictionaries/templates/actions/backend/BackendSidebar.html:23
+msgid "New dictionary"
+msgstr "Новый словарь"
+
+#: /wa-apps/dictionaries/lib/config/dictionariesRightConfig.class.php:10
+msgid "Can create new dictionaries"
+msgstr "Может создавать новые словари"
+
+#: /wa-apps/dictionaries/lib/config/dictionariesRightConfig.class.php:17
+msgid "Available dictionaries"
+msgstr "Доступные словари"

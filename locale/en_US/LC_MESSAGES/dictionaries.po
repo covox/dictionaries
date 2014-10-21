@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: dictionaries\n"
-"POT-Creation-Date: 2014-10-21 20:35+0400\n"
+"POT-Creation-Date: 2014-10-22 02:57+0400\n"
 "PO-Revision-Date: \n"
 "Last-Translator: snark.pro <covoxx@gmail.com>\n"
 "Language-Team: dictionaries <covoxx@gmail.com>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Poedit-SearchPath-1: .\n"
 
 #: /wa-apps/dictionaries/templates/actions/backend/BackendEditor.html:8
-msgid "List name"
+msgid "Dictionary name"
 msgstr ""
 
 #: /wa-apps/dictionaries/templates/actions/backend/BackendEditor.html:16
@@ -40,53 +40,53 @@ msgid "or"
 msgstr ""
 
 #: /wa-apps/dictionaries/templates/actions/backend/BackendEditor.html:45
-msgid "go back to list"
+msgid "go back to dictionary"
 msgstr ""
 
 #: /wa-apps/dictionaries/templates/actions/backend/BackendEditor.html:62
-#: /wa-apps/dictionaries/templates/actions/backend/BackendList.html:49
+#: /wa-apps/dictionaries/templates/actions/backend/BackendDictionary.html:50
 msgid "Max 255 characters"
 msgstr ""
 
 #: /wa-apps/dictionaries/templates/actions/backend/BackendEditor.html:63
-msgid "List name cannot be empty"
+msgid "Dictionary name cannot be empty"
 msgstr ""
 
-#: /wa-apps/dictionaries/templates/actions/backend/BackendList.html:8
-msgid "List settings"
+#: /wa-apps/dictionaries/templates/actions/backend/BackendDictionary.html:8
+msgid "Dictionary settings"
 msgstr ""
 
-#: /wa-apps/dictionaries/templates/actions/backend/BackendList.html:11
-#: /wa-apps/dictionaries/templates/actions/backend/BackendList.html:48
+#: /wa-apps/dictionaries/templates/actions/backend/BackendDictionary.html:11
+#: /wa-apps/dictionaries/templates/actions/backend/BackendDictionary.html:49
 msgid "Delete"
 msgstr ""
 
-#: /wa-apps/dictionaries/templates/actions/backend/BackendList.html:27
+#: /wa-apps/dictionaries/templates/actions/backend/BackendDictionary.html:28
 msgid "Add"
 msgstr ""
 
-#: /wa-apps/dictionaries/templates/actions/backend/BackendList.html:31
+#: /wa-apps/dictionaries/templates/actions/backend/BackendDictionary.html:32
 msgid "Start over"
 msgstr ""
 
-#: /wa-apps/dictionaries/templates/actions/backend/BackendList.html:47
+#: /wa-apps/dictionaries/templates/actions/backend/BackendDictionary.html:48
 msgid "Edit"
 msgstr ""
 
-#: /wa-apps/dictionaries/templates/actions/backend/BackendList.html:50
-msgid "Edit list item"
+#: /wa-apps/dictionaries/templates/actions/backend/BackendDictionary.html:51
+msgid "Edit dictionary item"
 msgstr ""
 
-#: /wa-apps/dictionaries/templates/actions/backend/BackendList.html:51
-msgid "List “%s” will be deleted permanently. Delete?"
+#: /wa-apps/dictionaries/templates/actions/backend/BackendDictionary.html:52
+msgid "Dictionary “%s” will be deleted permanently. Delete?"
 msgstr ""
 
-#: /wa-apps/dictionaries/templates/actions/backend/BackendSidebar.html:19
-msgid "No lists available"
+#: /wa-apps/dictionaries/templates/actions/backend/BackendSidebar.html:15
+msgid "No dictionaries available"
 msgstr ""
 
-#: /wa-apps/dictionaries/templates/actions/backend/BackendSidebar.html:27
-msgid "New list"
+#: /wa-apps/dictionaries/templates/actions/backend/BackendSidebar.html:23
+msgid "New dictionary"
 msgstr ""
 
 #: /wa-apps/dictionaries/lib/layouts/dictionariesDefault.layout.php:13
@@ -94,21 +94,21 @@ msgid "Dictionaries"
 msgstr ""
 
 #: /wa-apps/dictionaries/lib/config/dictionariesRightConfig.class.php:10
-msgid "Can create new lists"
+msgid "Can create new dictionaries"
+msgstr ""
+
+#: /wa-apps/dictionaries/lib/config/dictionariesRightConfig.class.php:17
+msgid "Available dictionaries"
 msgstr ""
 
 #: /wa-apps/dictionaries/lib/config/dictionariesRightConfig.class.php:18
-msgid "Available lists"
-msgstr ""
-
-#: /wa-apps/dictionaries/lib/config/dictionariesRightConfig.class.php:19
 msgid "No access"
 msgstr ""
 
-#: /wa-apps/dictionaries/lib/config/dictionariesRightConfig.class.php:20
+#: /wa-apps/dictionaries/lib/config/dictionariesRightConfig.class.php:19
 msgid "Check items only"
 msgstr ""
 
-#: /wa-apps/dictionaries/lib/config/dictionariesRightConfig.class.php:21
+#: /wa-apps/dictionaries/lib/config/dictionariesRightConfig.class.php:20
 msgid "Full access"
 msgstr ""
